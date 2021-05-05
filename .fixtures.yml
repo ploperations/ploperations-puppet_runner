@@ -3,4 +3,11 @@
 ---
 fixtures:
   forge_modules:
-#     stdlib: "puppetlabs/stdlib"
+    acl: 'puppetlabs/acl' # used by puppet_run_scheduler
+    archive: 'puppet/archive'
+    cron: 'puppetlabs/cron_core' # used by puppet_run_scheduler
+    # puppet_run_scheduler: 'reidmv/puppet_run_scheduler'
+    scheduled_task: 'puppetlabs/scheduled_task' # used by puppet_run_scheduler
+    stdlib: 'puppetlabs/stdlib'
+  repositories:
+    puppet_run_scheduler: https://github.com/reidmv/reidmv-puppet_run_scheduler.git

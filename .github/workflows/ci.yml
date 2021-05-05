@@ -19,6 +19,7 @@ jobs:
       run: |
         CODENAME=$(grep UBUNTU_CODENAME /etc/os-release | cut -d '=' -f2)
         wget https://apt.puppet.com/puppet-tools-release-$CODENAME.deb
+        sudo apt-get update
         sudo dpkg -i puppet-tools-release-$CODENAME.deb
         sudo apt-get update
         sudo apt-get install pdk

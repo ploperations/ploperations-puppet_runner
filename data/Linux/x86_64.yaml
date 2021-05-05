@@ -1,0 +1,2 @@
+---
+puppet_runner::binary_name: 'puppet-runner_linux_amd64'

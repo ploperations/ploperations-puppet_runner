@@ -1,0 +1,3 @@
+---
+puppet_runner::exe_folder_path: 'C:/ProgramData/PuppetLabs/puppet-runner'
+puppet_runner::install_path: 'C:/ProgramData/PuppetLabs/puppet-runner'
