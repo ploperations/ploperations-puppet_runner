@@ -1,6 +1,6 @@
 {
   "name": "ploperations-puppet_runner",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "ploperations",
   "summary": "Deploy puppet-runner and configure puppet runs",
   "license": "Apache-2.0",
