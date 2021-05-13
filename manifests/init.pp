@@ -51,7 +51,13 @@ class puppet_runner (
   String[1] $checksum_type,
   String[1] $version,
 ) {
-  $_file_ownership = $facts['kernel'] ? {
+  $_file_owner = $facts['kernel'] ? {
+    'windows' => undef,
+    default   => 'root',
+  }
+
+  $_file_group = $facts['kernel'] ? {
+    'Darwin'  => 'wheel',
     'windows' => undef,
     default   => 'root',
   }
@@ -65,8 +71,8 @@ class puppet_runner (
   file {
     default:
       ensure => directory,
-      owner  => $_file_ownership,
-      group  => $_file_ownership,
+      owner  => $_file_owner,
+      group  => $_file_group,
       mode   => $_file_permissions,
       ;
     $install_path: ;
