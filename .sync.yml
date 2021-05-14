@@ -52,6 +52,8 @@ Gemfile:
         version: '~> 1.2'
       - gem: 'puppet-lint-version_comparison-check'
         version: '~> 0.2'
+      - gem: 'voxpupuli-acceptance'
+        version: '~> 0.3.0'
 Rakefile:
   linter_fail_on_warnings: true
   requires:
