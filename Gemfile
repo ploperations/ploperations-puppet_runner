@@ -46,7 +46,9 @@ group :development do
   gem "puppet-lint-unquoted_string-check", '~> 2.0',                         require: false
   gem "puppet-lint-variable_contains_upcase", '~> 1.2',                      require: false
   gem "puppet-lint-version_comparison-check", '~> 0.2',                      require: false
+  gem "puppet_metadata", '~> 0.3.0',                                         require: false
   gem "voxpupuli-acceptance", '~> 0.3.0',                                    require: false
+  gem "beaker-hostgenerator",                                                require: false, git: 'https://github.com/genebean/beaker-hostgenerator.git', ref: '189786157f144b06b584c21792b159030e87413d'
 end
 group :system_tests do
   gem "puppet-module-posix-system-r#{minor_version}", '~> 1.0', require: false, platforms: [:ruby]

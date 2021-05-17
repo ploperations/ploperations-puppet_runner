@@ -1,9 +1,0 @@
-HOSTS:
-  centos8:
-    platform: el-8-x86_64
-    hypervisor: docker
-    image: amd64/centos:centos8
-    # EL7 images do not support nested systemd
-    docker_cmd: '["/sbin/init"]'
-    docker_image_commands:
-      - 'yum install -y cronie unzip'

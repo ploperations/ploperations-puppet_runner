@@ -8,6 +8,9 @@ appveyor.yml:
 Gemfile:
   required:
     ':development':
+      - gem: 'beaker-hostgenerator'
+        git: 'https://github.com/genebean/beaker-hostgenerator.git'
+        ref: '189786157f144b06b584c21792b159030e87413d'
       - gem: 'github_changelog_generator'
         version: '~> 1.15'
       - gem: 'puppet-lint-absolute_classname-check'
@@ -52,8 +55,11 @@ Gemfile:
         version: '~> 1.2'
       - gem: 'puppet-lint-version_comparison-check'
         version: '~> 0.2'
+      - gem: 'puppet_metadata'
+        version: '~> 0.3.0'
       - gem: 'voxpupuli-acceptance'
         version: '~> 0.3.0'
+        
 Rakefile:
   linter_fail_on_warnings: true
   requires:
