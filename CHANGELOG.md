@@ -2,9 +2,9 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [v1.0.1](https://github.com/ploperations/ploperations-puppet_runner/tree/v1.0.1) (2021-05-13)
+## [1.0.1](https://github.com/ploperations/ploperations-puppet_runner/tree/1.0.1) (2021-05-13)
 
-[Full Changelog](https://github.com/ploperations/ploperations-puppet_runner/compare/1.0.0...v1.0.1)
+[Full Changelog](https://github.com/ploperations/ploperations-puppet_runner/compare/1.0.0...1.0.1)
 
 ### Fixed
 

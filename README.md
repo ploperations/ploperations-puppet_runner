@@ -3,7 +3,7 @@
 ![](https://img.shields.io/puppetforge/pdk-version/ploperations/puppet_runner.svg?style=popout)
 ![](https://img.shields.io/puppetforge/v/ploperations/puppet_runner.svg?style=popout)
 ![](https://img.shields.io/puppetforge/dt/ploperations/puppet_runner.svg?style=popout)
-[![Build Status](https://github.com/ploperations/ploperations-puppet_runner/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ploperations/ploperations-puppet_runner/actions/workflows/ci.yml)
+[![Build Status](https://github.com/ploperations/ploperations-puppet_runner/actions/workflows/pr_test.yml/badge.svg?branch=main)](https://github.com/ploperations/ploperations-puppet_runner/actions/workflows/pr_test.yml)
 
 Deploy [puppet-runner](https://github.com/ploperations/puppet-runner) and configure puppet runs
 
