@@ -41,6 +41,8 @@
 # @param [String[1]] version
 #   The version of `puppet-runner` to install
 #
+# @param [Optional[String[1]]] executable_options
+#   One or more options to pass to the binary, for example: `-env-reset-delay=100 -debug=true`
 class puppet_runner (
   Stdlib::Absolutepath $exe_folder_path,
   Stdlib::Absolutepath $install_path,
@@ -50,6 +52,7 @@ class puppet_runner (
   String[1] $checksum_filename,
   String[1] $checksum_type,
   String[1] $version,
+  Optional[String[1]] $executable_options = undef,
 ) {
   $_file_owner = $facts['kernel'] ? {
     'windows' => undef,
@@ -118,16 +121,16 @@ class puppet_runner (
   # determine which platform is being targeted and then pass the symlink's path
   # to the corresponding parameter of puppet_run_scheduler
   if $facts['kernel'] == 'windows' {
-    $_posix_exe = undef
-    $_windows_exe = $_exe_symlink
+    $_posix_command = undef
+    $_windows_command = strip("${_exe_symlink} ${executable_options}")
   } else {
-    $_posix_exe = $_exe_symlink
-    $_windows_exe = undef
+    $_posix_command = strip("${_exe_symlink} ${executable_options}")
+    $_windows_command = undef
   }
 
   class { 'puppet_run_scheduler':
     ensure                    => present,
-    posix_puppet_executable   => $_posix_exe,
-    windows_puppet_executable => $_windows_exe,
+    posix_puppet_executable   => $_posix_command,
+    windows_puppet_executable => $_windows_command,
   }
 }
