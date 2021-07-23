@@ -42,6 +42,7 @@ The following parameters are available in the `puppet_runner` class:
 * [`checksum_filename`](#checksum_filename)
 * [`checksum_type`](#checksum_type)
 * [`version`](#version)
+* [`executable_options`](#executable_options)
 
 ##### <a name="exe_folder_path"></a>`exe_folder_path`
 
@@ -93,4 +94,12 @@ The type of checksum whose value is contained in `puppet_runner::checksum_filena
 Data type: `String[1]`
 
 The version of `puppet-runner` to install
+
+##### <a name="executable_options"></a>`executable_options`
+
+Data type: `Optional[String[1]]`
+
+One or more options to pass to the binary, for example: `-env-reset-delay=100 -debug=true`
+
+Default value: ``undef``
 
