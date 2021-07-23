@@ -13,6 +13,25 @@ describe 'puppet_runner' do
         allow(win_acl_provider).to receive(:validate).and_return(true)
       end
 
+      context 'with executable_options and version set' do
+        let(:params) do
+          { 'executable_options' => '-foo',
+            'version' => '2.0.0' }
+        end
+
+        if os_facts[:kernel].eql?('windows')
+          it {
+            is_expected.to contain_class('puppet_run_scheduler')
+              .with_windows_puppet_executable('C:/ProgramData/PuppetLabs/puppet-runner/puppet-runner.exe -foo')
+          }
+        else
+          it {
+            is_expected.to contain_class('puppet_run_scheduler')
+              .with_posix_puppet_executable('/opt/puppetlabs/bin/puppet-runner -foo')
+          }
+        end
+      end
+
       context 'with version set to 2.0.0' do
         let(:params) { { 'version' => '2.0.0' } }
 
